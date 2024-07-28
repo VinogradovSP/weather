@@ -1,0 +1,171 @@
+.slider {
+  grid-area: slider;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--gridGap-32);
+  max-width: 1120px;
+  padding: var(--gridGap-32);
+}
+
+.title {
+  display: flex;
+  gap: var(--gridGap-32);
+  align-items: baseline;
+  color: var(--textWhite);
+  font-weight: 700;
+}
+
+.title > h2 {
+  line-height: 1.34;
+}
+
+.text {
+  position: relative;
+  font-size: var(--fontSize-16);
+  line-height: var(--lineHeight-20);
+  color: var(--textDisabled);
+  cursor: pointer;
+  transition: color 1s;
+}
+
+.text::before {
+  content: "";
+  background-color: var(--textWhite);
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  opacity: 0;
+  transition: all 1s;
+}
+
+.activeText {
+  color: var(--textWhite);
+  cursor: default;
+}
+
+.activeText::before {
+  width: 100%;
+  opacity: 1;
+}
+
+.sliderMain {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gridGap-32);
+}
+
+.prev,
+.next {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3rem;
+  background: var(--backgroundBloks);
+}
+.next::before,
+.prev::before {
+  content: "";
+  width: 1.5rem;
+  height: 1.5rem;
+  background: url("/public/images/iconButtons/_iconRight.svg") no-repeat;
+}
+
+.prev::before {
+  transform: rotate(180deg);
+}
+
+.activeBtn:hover {
+  background-color: var(--backgroundHover);
+  cursor: pointer;
+}
+
+.carousel {
+  display: grid;
+  grid-auto-flow: column;
+  max-width: 880px;
+  gap: var(--gridGap-16);
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, #000 95%, transparent 100%);
+}
+
+.sliderFigure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fontSize-16);
+  line-height: var(--lineHeight-20);
+  padding: 1em;
+  max-height: 4em;
+  gap: 1em;
+  background-color: var(--backgroundBloks);
+  border-radius: var(--borderRadius);
+  color: var(--textBlack);
+}
+
+.sliderFigure img {
+  width: 2em;
+  height: 2em;
+}
+
+.sliderFigure > figcaption,
+.sliderFigure > p {
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 1280px) {
+  .carousel {
+    max-width: calc(720px + (880 - 720) * ((100vw - 1024px) / (1280 - 1024)));
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .carousel {
+    max-width: calc(512px + (720 - 512) * ((100vw - 768px) / (1024 - 768)));
+  }
+}
+
+@media screen and (min-width: 641px) and (max-width: 768px) {
+  .carousel {
+    max-width: calc(400px + (512 - 400) * ((100vw - 641px) / (768 - 641)));
+  }
+  .sliderFigure {
+    flex-wrap: wrap;
+    max-height: none;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .title > h2 {
+    font-size: 1rem;
+    line-height: 1.25;
+  }
+  .carousel {
+    max-width: calc(199px + (464 - 199) * ((100vw - 375px) / (640 - 375)));
+  }
+  .prev,
+  .next {
+    width: 2.5rem;
+    height: 2rem;
+  }
+  .next::before,
+  .prev::before {
+    width: 1rem;
+    height: 1rem;
+    background: url("/public/images/iconButtons/chevron-right.svg") no-repeat;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .carousel {
+    max-width: 199px;
+  }
+  .sliderFigure {
+    flex-wrap: wrap;
+    max-height: none;
+  }
+}

@@ -1,0 +1,31 @@
+.logo {
+  width: 192px;
+  height: 48px;
+}
+
+.logo::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url("/public/images/logo/desktop-logo.png") no-repeat;
+}
+
+@media screen and (max-width: 886px) {
+  .logo {
+    width: 56px;
+  }
+  .logo::before {
+    background: url("/public/images/logo/tablet-logo.png") no-repeat;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .logo {
+    width: 32px;
+    height: 32px;
+  }
+  .logo::before {
+    background: url("/public/images/logo/mobile-logo.png") no-repeat;
+  }
+}

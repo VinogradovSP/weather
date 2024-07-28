@@ -1,0 +1,55 @@
+:root {
+  --colorWhite: #ffffff;
+
+  --backgroundFon: #7070701a;
+  --backgroundBloks: #f5f4f466;
+  --backgroundHover: #dadada;
+  --backgroundRange: #dadada66;
+
+  --textWhite: #f5f4f4;
+  --textBlack: #202020;
+  --textGrey: #393939;
+  --textDisabled: #a6a6a6;
+
+  --borderColor: #545454;
+  --borderColorLight: #54545466;
+  --borderRadius: 8px;
+
+  --fontSize-16: 1rem;
+  --lineHeight-20: 1.25;
+
+  --gridGap-32: 32px;
+  --gridGap-16: 16px;
+
+  --backgroundProgressPressure: radial-gradient(
+    50% 9453.13% at 50% 50%,
+    var(--borderColorLight) 0%,
+    #8a8a8a66 45.12%,
+    var(--backgroundHover) 100%,
+    var(--backgroundRange) 100%
+  );
+}
+
+body {
+  background: url("../../public/images/application-background.jpg") center /
+    cover no-repeat fixed;
+  font-family: "Raleway", sans-serif;
+  font-variant-numeric: lining-nums;
+}
+
+@media screen and (max-width: 1024px) {
+  :root {
+    --gridGap-32: 24px;
+    --gridGap-16: 12px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  :root {
+    --fontSize-16: 0.75rem;
+    --lineHeight-20: 1.34;
+
+    --gridGap-32: 16px;
+    --gridGap-16: 8px;
+  }
+}

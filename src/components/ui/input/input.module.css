@@ -1,0 +1,11 @@
+.inputSearch {
+  background: var(--backgroundBloks);
+  color: var(--textBlack);
+  border-radius: var(--borderRadius);
+  border: none;
+  outline: none;
+  transition: background 0.3s ease-in-out;
+  &:focus {
+    background: var(--backgroundHover);
+  }
+}

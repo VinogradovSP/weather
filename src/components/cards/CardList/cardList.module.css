@@ -1,0 +1,108 @@
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(158px, 163px));
+  grid-template-rows: repeat(2, minmax(148px, 196px));
+  gap: var(--gridGap-16);
+  list-style: none;
+  max-height: 408px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: var(--fontSize-16);
+  line-height: var(--lineHeight-20);
+  padding: 1em;
+  gap: 1em;
+  color: var(--textBlack);
+  background: var(--backgroundBloks);
+  border-radius: var(--borderRadius);
+}
+
+.item figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2em;
+  line-height: 1;
+  gap: 0.5em;
+}
+
+.item figure img {
+  width: 1em;
+  height: 1em;
+}
+
+.progress {
+  width: 100%;
+  text-align: center;
+  font-size: 0.75em;
+  line-height: 1.34;
+  color: var(--textGrey);
+}
+
+.progressBar {
+  position: relative;
+  height: 8px;
+  background: var(--backgroundRange);
+  border-radius: var(--borderRadius);
+  margin-bottom: 8px;
+  mask: radial-gradient(
+    circle 6px at calc(var(--positionMask, 50%) + 4px),
+    var(--textWhite) 4px,
+    transparent 4px,
+    transparent 6px,
+    var(--colorWhite) 6px
+  );
+}
+
+.progressBar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: var(--positionMask, 50%);
+  display: block;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  background: var(--textWhite);
+}
+
+.progressBarGradient {
+  background-image: var(--backgroundProgressPressure);
+}
+
+.humidity {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 1024px) {
+  .cards {
+    align-self: center;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .cards {
+    grid-template-columns: repeat(3, minmax(98px, 128px));
+    grid-template-rows: repeat(2, minmax(auto, 148px));
+  }
+
+  .progressBar {
+    height: 6px;
+    margin-bottom: 6px;
+    mask: radial-gradient(
+      circle 5px at calc(var(--positionMask, 50%) + 3px),
+      var(--textWhite) 3px,
+      transparent 3px,
+      transparent 5px,
+      var(--colorWhite) 5px
+    );
+  }
+  .progressBar::after {
+    width: 6px;
+    height: 6px;
+  }
+}

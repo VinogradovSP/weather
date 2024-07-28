@@ -1,0 +1,10 @@
+.button {
+  cursor: pointer;
+  background: none;
+  border-radius: var(--borderRadius);
+  border: none;
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}

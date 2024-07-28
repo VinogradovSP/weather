@@ -1,0 +1,18 @@
+.footer {
+  grid-area: footer;
+
+  display: grid;
+  grid-template-columns: minmax(auto, 70rem);
+  padding: var(--gridGap-32);
+}
+
+footer > p {
+  color: var(--textWhite);
+  justify-self: center;
+  font-size: var(--fontSize-16);
+  line-height: var(--lineHeight-20);
+}
+
+footer a {
+  color: var(--textWhite);
+}

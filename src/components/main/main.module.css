@@ -1,0 +1,22 @@
+.main {
+  grid-area: main;
+
+  display: grid;
+  grid-template-columns: minmax(374px, 534px) 506px;
+  gap: 1rem;
+  justify-items: center;
+  padding: var(--gridGap-32);
+}
+
+@media screen and (max-width: 1024px) {
+  .main {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(auto, 306px) minmax(auto, 404px);
+    gap: 3rem;
+  }
+}
+@media screen and (max-width: 640px) {
+  .main {
+    gap: 2rem;
+  }
+}
