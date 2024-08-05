@@ -14,6 +14,10 @@
   line-height: 1.34;
 }
 
+.description p::first-letter {
+  text-transform: capitalize;
+}
+
 .description strong {
   font-size: 5.6em;
   line-height: 1;
